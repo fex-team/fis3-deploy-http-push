@@ -68,12 +68,12 @@ function upload(receiver, to, release, content, file, callback){
     );
 }
 
-module.exports = function (dest, file, settings, callback) {
+module.exports = function (dest, file, content, settings, callback) {
     var root = fis.project.getProjectPath();
     var to = normalizePath(dest.to, root);
     if(settings && settings.receiver){
-        upload(settings.receiver, to, dest.release, file.getContent(), file, callback);
+        upload(settings.receiver, to, dest.release, content, file, callback);
     } else {
-        deliver(to, dest.release, file.getContent(), file, callback);
+        deliver(to, dest.release, content, file, callback);
     }
-}
+};
