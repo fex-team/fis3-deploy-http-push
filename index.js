@@ -40,6 +40,12 @@ function deliver(output, release, content, file, callback){
     var target;
     target = fis.util(output, release);
     fis.util.write(target, content);
+    fis.log.debug(
+        'release ' +
+        file.subpath.replace(/^\//, '') +
+        ' >> '.yellow.bold +
+        target
+    );
     callback();
 }
 
