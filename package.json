@@ -12,5 +12,9 @@
     "plugin"
   ],
   "author": "FIS",
-  "license": "BSD"
+  "license": "BSD",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fex-team/fis-deploy-default.git"
+  }
 }
