@@ -11,7 +11,7 @@ var serverRoot = (function(){
     }
 })();
 
-var cwd = fis.config.get('process.cwd') || process.cwd();
+var cwd = fis.processCWD || process.cwd();
 
 function normalizePath(to, root){
     if(to[0] === '.'){
