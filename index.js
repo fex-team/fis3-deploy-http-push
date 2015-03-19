@@ -11,7 +11,7 @@ var serverRoot = (function(){
     }
 })();
 
-var cwd = process.cwd();
+var cwd = fis.config.get('process.cwd') || process.cwd();
 
 function normalizePath(to, root){
     if(to[0] === '.'){
@@ -75,6 +75,7 @@ function upload(receiver, to, release, content, file, callback){
 }
 
 module.exports = function (dest, file, content, settings, callback) {
+    console.log(dest);
     var root = fis.project.getProjectPath();
     var to = normalizePath(dest.to, root);
     if(settings && settings.receiver){
