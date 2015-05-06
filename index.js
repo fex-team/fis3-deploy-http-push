@@ -1,11 +1,28 @@
+/**
+ * fis.baidu.com
+ */
+
+var pth = require('path');
+
+function getServerInfo() {
+    var conf = pth.join(fis.project.getTempPath('server'), 'conf.json');
+    if (fis.util.isFile(conf)) {
+        return fis.util.readJSON(conf);
+    }
+    return {};
+}
+
 var serverRoot = (function(){
     var key = 'FIS_SERVER_DOCUMENT_ROOT';
+    var serverInfo = getServerInfo();
     if(process.env && process.env[key]){
         var path = process.env[key];
         if(fis.util.exists(path) && !fis.util.isDir(path)){
             fis.log.error('invalid environment variable [' + key + '] of document root [' + path + ']');
         }
         return path;
+    } else if (serverInfo['root'] && fis.util.is(serverInfo['root'], 'String')) {
+        return serverInfo['root'];
     } else {
         return fis.project.getTempPath('www');
     }
@@ -77,7 +94,7 @@ function upload(receiver, to, release, content, file, callback){
 module.exports = function (dest, file, content, settings, callback) {
     var root = fis.project.getProjectPath();
     var to = normalizePath(dest.to, root);
-    if(settings && settings.receiver){
+    if(settings && settings.receiver) {
         upload(settings.receiver, to, dest.release, content, file, callback);
     } else {
         deliver(to, dest.release, content, file, callback);
