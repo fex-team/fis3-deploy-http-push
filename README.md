@@ -14,12 +14,7 @@ fis.match('*.js', {
         //如果配置了receiver，fis会把文件逐个post到接收端上
         receiver: 'http://www.example.com:8080/receiver.php',
         //这个参数会跟随post请求一起发送
-        to: '/home/fis/www',
-        //支持对文件进行字符串替换
-        replace : {
-            from : 'http://www.online.com',
-            to : 'http://www.offline.com'
-        }
+        to: '/home/fis/www'
     })
 })
 ```
