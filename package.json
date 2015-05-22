@@ -1,20 +1,21 @@
 {
-  "name": "fis-deploy-default",
-  "version": "0.0.6",
-  "description": "fis default deploy plugin",
+  "name": "fis3-deploy-http-push",
+  "version": "1.0.0",
+  "description": "fis3 deploy http-push plugin",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "fis",
-    "deploy",
-    "plugin"
+    "fis-plus",
+    "fis3",
+    "deploy"
   ],
   "author": "FIS",
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fex-team/fis-deploy-default.git"
+    "url": "https://github.com/fex-team/fis3-deploy-http-push.git"
   }
 }
