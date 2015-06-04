@@ -1,7 +1,5 @@
 # fis3-deploy-http-push
 
-## 说明
-
 FIS 默认的部署插件，提供本地部署以及远程upload部署能力。
 
 ## 安装
