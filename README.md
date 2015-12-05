@@ -17,10 +17,12 @@ npm install fis3-deploy-http-push
 ```js
 fis.match('*.js', {
     deploy: fis.plugin('http-push', {
-        //如果配置了receiver，fis会把文件逐个post到接收端上
+        // 如果配置了 receiver，FIS 会把文件逐个 post 到接收端上
         receiver: 'http://www.example.com:8080/receiver.php',
-        //这个参数会跟随post请求一起发送
-        to: '/home/fis/www'
+        // 这个参数会跟随 POST 请求一起发送
+        to: '/home/fis/www',
+        // 缓存目录，已经发送成功的文件会追加到 "postsuccess.txt"
+        cacheDir: __dirname + '/.cache'
     })
 })
 ```
