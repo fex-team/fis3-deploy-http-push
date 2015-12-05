@@ -62,6 +62,9 @@ module.exports = function(options, modified, total, callback) {
     if (cachePostSuccessFile) { // 需要处理缓存
       // e.g. "http://127.0.0.1:8080/receiver,/home/public,/css/base.css"
       cacheHash = [receiver.replace(/\?.*$/, ''), to, file.getUrl()].join();
+      if (!file.useHash) { // 如果文件名中没有使用 hash 则自动补上
+        cacheHash += ',' + file.getHash();
+      }
       if (cachePostSuccess && cachePostSuccess.indexOf(cacheHash) >= 0) {
         var time = '[' + fis.log.now(true) + ']';
         process.stdout.write(
