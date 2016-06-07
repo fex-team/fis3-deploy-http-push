@@ -20,7 +20,8 @@ fis.match('*.js', {
         //如果配置了receiver，fis会把文件逐个post到接收端上
         receiver: 'http://www.example.com:8080/receiver.php',
         //这个参数会跟随post请求一起发送
-        to: '/home/fis/www'
+        to: '/home/fis/www',
+        type: 'zip'//将文件打包成zip再上传(可选)
     })
 })
 ```
