@@ -9,7 +9,7 @@ function upload(receiver, to, release, content, file, callback) {
     //url, request options, post data, file
     receiver, null, {
       to: encodeURIComponent(to + release)
-    }, content, subpath,
+    }, content, encodeURIComponent(subpath),
     function(err, res) {
       if (err || res.trim() != '0') {
         callback('upload file [' + subpath + '] to [' + to +
