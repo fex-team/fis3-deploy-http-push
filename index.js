@@ -8,7 +8,7 @@ function upload(receiver, to, release, content, file, callback) {
   fis.util.upload(
     //url, request options, post data, file
     receiver, null, {
-      to: to + release
+      to: encodeURIComponent(to + release)
     }, content, subpath,
     function(err, res) {
       if (err || res.trim() != '0') {
