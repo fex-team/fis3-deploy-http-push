@@ -23,7 +23,8 @@ function mkdirs($path, $mod = 0777) {
     return false;
 }
 
-if($_POST['to'] && $_POST['token'] && $_POST['token'] == "xxxxxx"){ // 以增加 token 字段为例, 举一反三
+// if($_POST['to'] && $_POST['token'] && $_POST['token'] == "xxxxxx"){ // 以增加 token 字段为例, 举一反三
+if($_POST['to']){ 
     $to = urldecode($_POST['to']);
     if(is_dir($to) || $_FILES["file"]["error"] > 0){
         header("Status: 500 Internal Server Error");
