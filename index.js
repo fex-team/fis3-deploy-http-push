@@ -5,10 +5,10 @@ var _ = fis.util;
 
 function upload(receiver, to, data, release, content, file, callback) {
   var subpath = file.subpath;
-  data['to'] = encodeURIComponent(to + release);
+  data['to'] = to + release;
   fis.util.upload(
       //url, request options, post data, file
-      receiver, null, data, content, encodeURIComponent(subpath),
+      receiver, null, data, content, subpath,
       function(err, res) {
         if (err || res.trim() != '0') {
           callback('upload file [' + subpath + '] to [' + to + '] by receiver [' + receiver + '] error [' + (err || res) + ']');
