@@ -2,10 +2,11 @@
  * fis.baidu.com
  */
 var _ = fis.util;
+var path = require('path');
 
 function upload(receiver, to, data, release, content, file, callback) {
   var subpath = file.subpath;
-  data['to'] = to + release;
+  data['to'] = path.join(to, release);
   fis.util.upload(
       //url, request options, post data, file
       receiver, null, data, content, subpath,
@@ -49,7 +50,7 @@ module.exports = function(options, modified, total, callback) {
 
       upload(receiver, to, data, file.getHashRelease(), file.getContent(), file, function(error) {
         if (error) {
-          if (!--reTryCount) {
+          if (options.retry && !--reTryCount) {
             throw new Error(error);
           } else {
             _upload();
