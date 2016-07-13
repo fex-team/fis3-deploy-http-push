@@ -1,6 +1,12 @@
 <?php
 
-@error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+// 如果是 debug 模式,就输出所有错误
+if($_GET['debug'] == "true"){
+    @error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+}else{
+    @error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+}
 
 function mkdirs($path, $mod = 0777) {
     if (is_dir($path)) {
@@ -17,7 +23,7 @@ function mkdirs($path, $mod = 0777) {
     return false;
 }
 
-if($_POST['to']){
+if($_POST['to'] && $_POST['token'] && $_POST['token'] == "xxxxxx"){ // 以增加 token 字段为例, 举一反三
     $to = urldecode($_POST['to']);
     if(is_dir($to) || $_FILES["file"]["error"] > 0){
         header("Status: 500 Internal Server Error");
