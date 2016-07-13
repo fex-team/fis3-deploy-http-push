@@ -1,7 +1,7 @@
 <?php
 
 // 如果是 debug 模式,就输出所有错误
-if($_GET['debug'] == "true"){
+if(isset($_GET['debug']) && $_GET['debug'] == "true"){
     @error_reporting(E_ALL);
     ini_set('display_errors', '1');
 }else{
