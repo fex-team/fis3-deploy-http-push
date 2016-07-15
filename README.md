@@ -57,8 +57,7 @@ fis.match('**', {
     function () {
       arguments[0] = {
         //如果配置了receiver，fis会把文件逐个post到接收端上
-        receiver: 'http://maxtt.cc/receiver.php?debug=false',
-        // receiver: 'http://127.0.0.1/receiver.php',
+        receiver: 'http://127.0.0.1/receiver.php?debug=false',
         //这个参数会跟随post请求一起发送
         to: '/home/maxming/www/wb',
         // to: '/Users/maxming/www/wb',
