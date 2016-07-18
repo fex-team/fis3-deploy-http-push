@@ -60,8 +60,8 @@ fis.match('**', {
         receiver: 'http://127.0.0.1/receiver.php?debug=false',
         // receiver: 'http://127.0.0.1/receiver.php',
         //这个参数会跟随post请求一起发送
-        to: '/home/maxming/www/wb',
-        // to: '/Users/maxming/www/wb',
+        to: '/home/fis/www',
+        // to: '/Users/fis/www',
         // 附加参数, 后端通过 $_POST['xx'] 获取
         data: {
           token: fis.get('project.token')
