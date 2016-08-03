@@ -6,7 +6,7 @@ var path = require('path');
 
 function upload(receiver, to, data, release, content, file, callback) {
   var subpath = file.subpath;
-  data['to'] = path.join(to, release);
+  data['to'] = _(path.join(to, release));
   fis.util.upload(
       //url, request options, post data, file
       receiver, null, data, content, subpath,
