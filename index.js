@@ -186,6 +186,12 @@ module.exports = function(options, modified, total, callback) {
   var validateApi = options.validateApi;
   var data = options.data || {};
 
+  if (options.host) {
+    receiver = options.receiver = options.host + '/v1/upload';
+    authApi = options.authApi = options.host + '/v1/authorize';
+    validateApi = options.validateApi = options.host + '/v1/validate';
+  }
+
   var steps = [];
 
   modified.forEach(function(file) {
