@@ -1,6 +1,6 @@
 {
   "name": "fis3-deploy-http-push",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "fis3 deploy http-push plugin",
   "main": "index.js",
   "scripts": {
@@ -17,5 +17,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/fex-team/fis3-deploy-http-push.git"
+  },
+  "dependencies": {
+    "prompt": "1.0.0"
   }
 }
