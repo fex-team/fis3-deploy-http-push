@@ -175,8 +175,6 @@ function deployInfo(options) {
 module.exports = function(options, modified, total, callback) {
   if (!options.to) {
     throw new Error('options.to is required!');
-  } else if (!options.receiver) {
-    throw new Error('options.receiver is required!');
   }
 
   var info = deployInfo() || {};
@@ -190,6 +188,10 @@ module.exports = function(options, modified, total, callback) {
     receiver = options.receiver = options.host + '/v1/upload';
     authApi = options.authApi = options.host + '/v1/authorize';
     validateApi = options.validateApi = options.host + '/v1/validate';
+  }
+
+  if (!options.receiver) {
+    throw new Error('options.receiver is required!');
   }
 
   var steps = [];
