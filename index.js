@@ -107,7 +107,7 @@ function requireEmail(authApi, validateApi, info, cb) {
       email: ret.email
     }, function(error, ret) {
       if (error) {
-        return callback(error);
+        return cb(error);
       }
 
       console.log('We\'re already sent the code to your email.')
