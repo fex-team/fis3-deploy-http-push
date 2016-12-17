@@ -13,7 +13,7 @@ function upload(receiver, to, data, release, content, file, callback) {
       //url, request options, post data, file
       receiver, null, data, content, subpath,
       function(err, res) {
-        let json = null;
+        var json = null;
         res = res.trim();
 
         try {
@@ -160,7 +160,7 @@ function deployInfo(options) {
     // setter
     return options && fis.util.write(conf, JSON.stringify(options, null, 2));
   } else {
-    let ret = null;
+    var ret = null;
 
     try {
       // getter
