@@ -225,7 +225,7 @@ module.exports = function(options, modified, total, callback) {
               }
             });
           } else if (options.retry && !--reTryCount) {
-            throw new Error(error);
+            throw new Error(error.errmsg || error);
           } else {
             _upload(next);
           }
