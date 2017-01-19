@@ -14,7 +14,7 @@ function upload(receiver, to, data, release, content, file, callback) {
       receiver, null, data, content, subpath,
       function(err, res) {
         var json = null;
-        res = res.trim();
+        res = res && res.trim();
 
         try {
           json = res ? JSON.parse(res) : null;
