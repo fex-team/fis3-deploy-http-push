@@ -31,7 +31,7 @@ function upload(receiver, to, data, release, content, file, callback) {
               time.grey + ' ' +
               subpath.replace(/^\//, '') +
               ' >> '.yellow.bold +
-              to + release
+              data['to']
           );
           callback();
         }
