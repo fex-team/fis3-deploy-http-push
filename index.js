@@ -197,10 +197,9 @@ module.exports = function(options, modified, total, callback) {
   var steps = [];
 
   modified.forEach(function(file) {
-    var reTryCount = options.retry;
-
     steps.push(function(next) {
       var _upload = arguments.callee;
+      var reTryCount = options.retry;
       data.email = info.email;
       data.token = info.token;
 
